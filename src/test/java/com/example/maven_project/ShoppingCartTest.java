@@ -1,14 +1,12 @@
 package com.example.maven_project;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ShoppingCartTest {
 
     @Test
     void testAddProduct() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 2, 50000);
@@ -18,7 +16,6 @@ public class ShoppingCartTest {
 
     @Test
     void testRemoveProduct() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
@@ -31,7 +28,6 @@ public class ShoppingCartTest {
 
     @Test
     void testTotalCalculation() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
@@ -42,20 +38,17 @@ public class ShoppingCartTest {
 
     @Test
     void testDiscountCalculation() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
 
         double finalPrice = cart.applyDiscount(10);
 
-        // INTENTIONALLY WRONG EXPECTED VALUE
-        assertEquals(40000, finalPrice, 0.01);
+        assertEquals(45000, finalPrice, 0.01);
     }
 
     @Test
     void testCouponCalculation() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
@@ -67,7 +60,6 @@ public class ShoppingCartTest {
 
     @Test
     void testInvalidQuantity() {
-
         ShoppingCart cart = new ShoppingCart();
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -77,7 +69,6 @@ public class ShoppingCartTest {
 
     @Test
     void testInvalidPrice() {
-
         ShoppingCart cart = new ShoppingCart();
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -87,7 +78,6 @@ public class ShoppingCartTest {
 
     @Test
     void testInvalidDiscount() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
@@ -99,7 +89,6 @@ public class ShoppingCartTest {
 
     @Test
     void testInvalidCoupon() {
-
         ShoppingCart cart = new ShoppingCart();
 
         cart.addProduct("Laptop", 1, 50000);
